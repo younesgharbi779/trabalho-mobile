@@ -4,9 +4,10 @@ import { styles } from "./styles";
 import Botao from "../Botao";
 
 export default function Card(props) {
-  const { price, uri, detalhe } = props;
+  const { price, uri, detalhe, titulo } = props;
   return (
     <View style={styles.container}>
+      <Text>{titulo}</Text>
       <View style={styles.containerImg}>
         <Image
           style={styles.img}
