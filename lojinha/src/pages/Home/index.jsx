@@ -14,7 +14,7 @@ export default function Home({ navigation }) {
 
     await axios({
       method: "GET",
-      url:"http://localhost:8080/produtos",
+      url:"https://api-da-lojinha.herokuapp.com/produtos",
 
     }).then(response =>{
       setProduto(response.data),
