@@ -2,13 +2,14 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container:{
-        width:"35%",
-        height:"30%",
-        alignItems:"center"
+        width:140,
+        height:220,
+        alignItems:"center",
+        marginBottom:70
     },
     containerImg:{
         width: '100%',
-        height: '80%',
+        height: '100%',
         backgroundColor:"#99FEFF",
         marginTop:25,
         backgroundColor:"blue"
@@ -16,5 +17,5 @@ export const styles = StyleSheet.create({
     img:{
         width:"100%",
         height:"100%",
-    }
+    },
 })
