@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { styles } from "./styles";
 import Header from "../../components/Header";
@@ -14,22 +14,19 @@ export default function Home({ navigation }) {
 
     await axios({
       method: "GET",
-      url:"http://localhost:8080/produtos",
+      url:"https://api-da-lojinha.herokuapp.com/produtos",
 
     }).then(response =>{
-      setProduto(response.data),
-      console.log(response.data);
+      setProduto(response.data)
     })
-      
-    console.log("terminei a funcao")
   };
     useEffect(()=>{handleClick()},[])
   return (
     <View style={styles.container}>
       <Header />
       <Carrossel />
-      {produto?.map((produto)=>{
-       return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("Produtos",{itemId:produto.id})}}/>)
+      {produto?.map((produto)=> {
+       return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("DetalheProdutos",{itemId:produto.id})}}/>)
       })}
     </View>
   );
