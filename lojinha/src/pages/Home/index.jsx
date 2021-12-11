@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
-import React,{useEffect, useState} from "react";
-import { View, ScrollView } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View } from "react-native";
 import { styles } from "./styles";
 import Header from "../../components/Header";
 import Carrossel from "../../components/Carrossel";
@@ -17,22 +17,19 @@ export default function Home({ navigation }) {
       url:"https://api-da-lojinha.herokuapp.com/produtos",
 
     }).then(response =>{
-      setProduto(response.data);
-    }).catch(error=> console.log(error));
-    
+      setProduto(response.data)
+    })
   };
     useEffect(()=>{handleClick()},[])
 
     
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Header />
-        <Carrossel />
-        {produto?.map((produto)=>{
-        return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("Produtos",{itemId:produto.id})}}/>)
-        })}
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <Header />
+      <Carrossel />
+      {produto?.map((produto)=> {
+       return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("DetalheProdutos",{itemId:produto.id})}}/>)
+      })}
+    </View>
   );
 }
