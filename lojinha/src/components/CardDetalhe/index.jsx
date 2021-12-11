@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, TouchableOpacity } from "react-native";
 
 import BotaoAdicionar from "../BotaoAdicionar";
 import { AntDesign } from '@expo/vector-icons';
@@ -42,7 +42,11 @@ export default function CardDetalhe( props ) {
         <View style={{width: 3, height: 120, backgroundColor: '#191c2f', borderRadius: 5}}></View>
 
         <View style={{width: '50%', alignItems: 'center', justifyContent: 'center', height: 150}}>
-          <AntDesign name="hearto" size={30} color="white" />
+
+          <TouchableOpacity>
+            <AntDesign name="hearto" size={30} color="white" />
+          </TouchableOpacity>
+  
         </View>
 
       </View>
