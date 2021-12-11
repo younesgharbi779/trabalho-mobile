@@ -1,28 +1,29 @@
 import "react-native-gesture-handler";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Keyboard, ImageBackground } from "react-native";
 import { styles } from "./styles";
-import axios from "axios";
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
-import { StatusBar } from "expo-status-bar";
+import { createTable, verifyUser, getAllUsers } from '../../repository/usuarioRepository';
+import Usuario from "../../model/Usuario";
 
-export default function Login({ navigation }) {
-  const [login, setLogin] = useState("")
-  const [senha, setSenha] = useState("")
-  const [clientes, setClientes] = useState([])
+export default function Login() {
+
+  const [usuario, setUsuario] = useState(null);
+  const [senha, setSenha] = useState(null);
+  const [listaUsuarios, setListaUsuarios] = useState([]);
+
+  useEffect(async () => {
+    createTable();
+    setListaUsuarios(await getAllUsers());
+  }, []);
 
   const handleClick = async () => {
+    if (!usuario === null || !senha === null) return;
 
-    await axios({
-      method: "GET",
-      url: "https://api-da-lojinha.herokuapp.com/clientes",
-
-    }).then(response => {
-      setClientes(response.data);
-      clientes.filter((clientes.usuario && clientes.senha))
-    })
-  };
+    verifyUser(usuario, senha, setListaUsuarios, listaUsuarios);
+    console.log(listaUsuarios)
+  }
 
   return (
     <View style={styles.container}>
@@ -34,18 +35,20 @@ export default function Login({ navigation }) {
           <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss }} >
             <View style={styles.login}>
               <TextInput
-                placeholder='Email Address'
-                placeholderTextColor='#808e9b'
                 style={styles.input}
+                placeholderTextColor='#808e9b'
+                placeholder="Username"
+                value={usuario}
+                onChangeText={setUsuario}
                 autoCorrect={false}
                 autoCapitalize='none'
-                autoCompleteType='email'
-                keyboardType='email-address'
-                textContentType='emailAddress' />
+              />
               <TextInput
                 placeholder='Password'
                 autoCapitalize="none"
                 autoCorrect={false}
+                value={senha}
+                onChangeText={setSenha}
                 placeholderTextColor='#808e9b'
                 style={styles.input}
                 secureTextEntry={true}
@@ -57,7 +60,7 @@ export default function Login({ navigation }) {
                 Forgot Password?
               </Text>
             </TouchableOpacity>
-            <TouchableHighlight onPress={() => navigation.navigate("Home")} style={styles.loginButton}>
+            <TouchableHighlight onPress={handleClick} style={styles.loginButton}>
               <Text style={styles.loginButtonText}>
                 Login
               </Text>
