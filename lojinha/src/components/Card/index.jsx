@@ -7,7 +7,6 @@ export default function Card(props) {
   const { price, uri, detalhe, titulo } = props;
   return (
     <View style={styles.container}>
-      <Text>{titulo}</Text>
       <View style={styles.containerImg}>
         <Image
           style={styles.img}
@@ -17,6 +16,7 @@ export default function Card(props) {
         />
       </View>
       <Text>R$ {price}</Text>
+        <Text>{titulo}</Text>
       <View style={styles.containerBtn}>
         <Botao
           label="https://cdn-icons-png.flaticon.com/512/2099/2099153.png"
