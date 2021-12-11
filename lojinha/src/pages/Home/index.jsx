@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
     
   return (
     <View style={styles.container}>
-      <Header />
+      <Header carrinho={() => navigation.navigate("Carrinho")}/>
       <Carrossel />
       {produto?.map((produto)=> {
        return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("DetalheProdutos",{itemId:produto.id})}}/>)
