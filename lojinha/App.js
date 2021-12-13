@@ -6,16 +6,24 @@ import Home from "./src/pages/Home";
 import DetalheProdutos from "./src/pages/DetalheProdutos/index"
 import Login from "./src/pages/Login";
 
+import Carrinho from './src/pages/Carrinho/index'
+import { StatusBar } from "react-native";
+
 export default function App() {
   const Stack = createStackNavigator();
   return (
-    <NavigationContainer initialRouteName="Home">
-      <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={Login} options={{headerShown: false}}  />
-        <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
-        <Stack.Screen name="DetalheProdutos" component={DetalheProdutos} options={{headerShown: false}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer initialRouteName="Home">
+    //   <Stack.Navigator initialRouteName="Login">
+    //   <Stack.Screen name="Login" component={Login} options={{headerShown: false}}  />
+    //     <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+    //     <Stack.Screen name="DetalheProdutos" component={DetalheProdutos} options={{headerShown: false}}/>
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <>
+      <StatusBar />
+      <Carrinho />
+    </>
+    
   );
 }
 
