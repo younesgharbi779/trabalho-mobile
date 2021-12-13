@@ -4,6 +4,19 @@ export const createTable = async () => {
     await Usuario.createTable();
 };
 
+export const verify = async (usuario, senha, setListaUsuarios, listaUsuarios, navigation) => {
+    const novoUsuario = new Usuario({
+        usuario: usuario,
+        senha: senha,
+    });
+
+    for (let i = 0; i < listaUsuarios.length; i++) {
+        if (novoUsuario.usuario == listaUsuarios[i].usuario && novoUsuario.senha == listaUsuarios[i].senha) {
+            navigation.navigate("Home");
+        };
+    };
+};
+
 export const signUp = async (usuario, senha, setListaUsuarios, listaUsuarios) => {
     let sign = false;
     const novoUsuario = new Usuario({
