@@ -11,13 +11,5 @@ text2:{
     color: '#9966ff',
     fontWeight: 'bold',
     marginRight: 10,
-    textShadowColor: "#000",
-    textShadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    textShadowOpacity: 0.58,
-    textShadowRadius: 16.00,
-    levation: 24,
 },
 })

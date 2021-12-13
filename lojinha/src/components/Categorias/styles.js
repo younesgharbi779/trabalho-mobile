@@ -21,14 +21,6 @@ export const styles = StyleSheet.create({
         color: '#3e4475', 
         fontSize: 20,
         fontWeight:'bold',
-        textShadowColor: "#000",
-        textShadowOffset: {
-        width: 0,
-        height: 12,
-        },
-        textShadowOpacity: 0.58,
-        textShadowRadius: 16.00,
-        elevation: 24,
     },
     undertext:{
         marginTop: 2,
@@ -36,24 +28,8 @@ export const styles = StyleSheet.create({
         color: '#3e4475',
         fontSize: 15,
         fontWeight:'bold',
-        textShadowColor: "#000",
-        textShadowOffset: {
-        width: 0,
-        height: 12,
-        },
-        textShadowOpacity: 0.58,
-        textShadowRadius: 16.00,
-        elevation: 24,
     },
     active:{
         color: '#9966ff',
-        textShadowColor: "#cc99ff",
-        textShadowOffset: {
-        width: 0,
-        height: 12,
-        },
-        textShadowOpacity: 0.58,
-        textShadowRadius: 16.00,
-        elevation: 24,
     },
 })
