@@ -1,82 +1,87 @@
 import "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
-import { View, Text, Keyboard, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  Keyboard,
+  ImageBackground,
+  TouchableOpacity,
+  TextInput
+} from "react-native";
 import { styles } from "./styles";
-import { LinearGradient } from 'expo-linear-gradient';
-import { TextInput, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
-import { createTable, verifyUser, getAllUsers } from '../../repository/usuarioRepository';
+import { LinearGradient } from "expo-linear-gradient";
+import {
+  verificador,
+  createTable,
+  verifyUser,
+  getAllUsers,
+  createUser
+} from "../../repository/usuarioRepository";
 import Usuario from "../../model/Usuario";
+import Input from "../../components/Input";
 
-export default function Login() {
-
-  const [usuario, setUsuario] = useState(null);
-  const [senha, setSenha] = useState(null);
+export default function Login({ navigation }) {
+  const [usuario, setUsuario] = useState();
+  const [senha, setSenha] = useState();
   const [listaUsuarios, setListaUsuarios] = useState([]);
 
   useEffect(async () => {
     createTable();
     setListaUsuarios(await getAllUsers());
+    console.log(listaUsuarios)
   }, []);
 
-  const handleClick = async () => {
-    if (!usuario === null || !senha === null) return;
-
-    verifyUser(usuario, senha, setListaUsuarios, listaUsuarios);
-    console.log(listaUsuarios)
+  const handlePress = async () => {
+    // createUser(usuario, senha)
+    // // setListUsuarios(await getAllUsers());
+    // verificador(usuario, senha)
+    // console.log(listaUsuarios)
+    // verifyUser(usuario, senha, setListaUsuarios, listaUsuarios)
+    verificador(usuario, senha)
   }
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../../../assets/backgroundImage.jpg')} style={styles.container} >
-        <LinearGradient colors={['#191c2f', 'transparent']} style={styles.main} >
-          <Text style={styles.welcomeText}>
-            Welcome!
-          </Text>
-          <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss }} >
-            <View style={styles.login}>
-              <TextInput
-                style={styles.input}
-                placeholderTextColor='#808e9b'
-                placeholder="Username"
-                value={usuario}
-                onChangeText={setUsuario}
-                autoCorrect={false}
-                autoCapitalize='none'
-              />
-              <TextInput
-                placeholder='Password'
-                autoCapitalize="none"
-                autoCorrect={false}
-                value={senha}
-                onChangeText={setSenha}
-                placeholderTextColor='#808e9b'
-                style={styles.input}
-                secureTextEntry={true}
-                textContentType='password'
-              />
-            </View>
-            <TouchableOpacity>
-              <Text style={styles.fpText}>
-                Forgot Password?
-              </Text>
+      <ImageBackground
+        source={require("../../../assets/backgroundImage.jpg")}
+        style={styles.container}
+      >
+        <View style={styles.main}>
+          <Text style={styles.welcomeText}>Welcome!</Text>
+          <View style={styles.mid}>
+            <TextInput
+              style={styles.input}
+              placeholderTextColor="#808e9b"
+              placeholder="Username"
+              value={usuario}
+              onChangeText={setUsuario}
+              autoCorrect={false}
+              autoCapitalize="none"
+            />
+            <TextInput
+              placeholder="Password"
+              autoCapitalize="none"
+              autoCorrect={false}
+              value={senha}
+              onChangeText={setSenha}
+              placeholderTextColor="#808e9b"
+              style={styles.input}
+              secureTextEntry={true}
+              textContentType="password"
+            />
+            <Text style={styles.fpText}>Forgot Password?</Text>
+
+            <TouchableOpacity style={styles.loginButton} onPress={()=> navigation.navigate("Home")}>
+              <Text style={styles.loginButtonText}>Login</Text>
             </TouchableOpacity>
-            <TouchableHighlight onPress={handleClick} style={styles.loginButton}>
-              <Text style={styles.loginButtonText}>
-                Login
-              </Text>
-            </TouchableHighlight>
-            <View style={styles.signUpTextView}>
-              <Text style={styles.signUpText}>
-                Don't have an account?
-              </Text>
-              <TouchableOpacity>
-                <Text style={[styles.signUpText, { color: '#e03b22' }]}>
-                  {' Sign Up'}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </TouchableWithoutFeedback>
-        </LinearGradient >
+          </View>
+        </View>
+        <View style={styles.signUpTextView}>
+          <Text style={styles.signUpText}> Don't Have an account? </Text>
+          <TouchableOpacity onPress={()=>navigation.navigate("Cadastrar")}>
+            <Text style={styles.signUpText}>Sign Up</Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
     </View>
   );

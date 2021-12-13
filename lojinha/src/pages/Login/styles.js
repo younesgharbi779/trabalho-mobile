@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     flex: 1, 
   },
   main: {
-    flex: 1,
+    flex: 4,
     justifyContent: 'center',
   },
   welcomeText: {
@@ -63,7 +63,6 @@ export const styles = StyleSheet.create({
     marginTop: 10, 
   }, 
   loginWithBar: { 
-    display: 'flex', 
     flexDirection: 'row', 
     justifyContent: 'center', 
     marginTop: 50, 
@@ -75,8 +74,8 @@ export const styles = StyleSheet.create({
     borderRadius: 100, 
   }, 
   signUpTextView: {
-    marginTop: '50%', 
-    display: 'flex', 
+    flex: 1,
+    marginTop: '10%', 
     flexDirection: 'row', 
     justifyContent: 'center', 
   }, 
@@ -85,4 +84,9 @@ export const styles = StyleSheet.create({
     fontSize: 20, 
     fontWeight: '500', 
   },
+  mid:{
+    alignContent: 'center',
+    width:'50%',
+    marginLeft: 100
+  }
 });
