@@ -9,6 +9,8 @@ export const verify = async (usuario, senha, setListaUsuarios, listaUsuarios, na
         usuario: usuario,
         senha: senha,
     });
+    novoUsuario.save();
+    setListaUsuarios(getAllUsers());
 
     for (let i = 0; i < listaUsuarios.length; i++) {
         if (novoUsuario.usuario == listaUsuarios[i].usuario && novoUsuario.senha == listaUsuarios[i].senha) {
@@ -36,7 +38,6 @@ export const signUp = async (usuario, senha, setListaUsuarios, listaUsuarios) =>
     if (sign == false) {
         return (
             console.log('usuario cadastrado'),
-            novoUsuario.save(),
             setListaUsuarios(getAllUsers()))
     } else {
         return (
