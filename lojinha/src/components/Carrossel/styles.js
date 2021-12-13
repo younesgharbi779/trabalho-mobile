@@ -1,10 +1,79 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    container:{
-        width: '80%',
-        height: '15%',
-        backgroundColor:"black",
-        marginTop:25
-    }
+slidercontainer:{
+  marginTop: 10,
+  display:'flex',
+  justifyContent:'center',
+  alignItems:'center',
+ },
+container:{
+  display:'flex',
+  justifyContent:'center',
+  alignItems:'center',
+  height: 400,
+  width: '90%',
+  shadowColor: "#000",
+  shadowOffset: {
+  width: 0,
+  height: 12,
+  },
+  shadowOpacity: 0.58,
+  shadowRadius: 16.00,
+  elevation: 24,
+},
+img:{
+  height: '100%',
+  width: '100%',
+  resizeMode: 'cover',
+  borderTopLeftRadius: 5,
+  borderTopRightRadius: 5,
+},
+text:{
+  alignSelf:'flex-start',
+  width: '55%',
+  height: '30%',
+  fontSize:20,
+  color: '#e03b22',
+  fontWeight: 'bold',
+  margin: 10,
+  paddingBottom: 15,
+},
+detalhes:{
+  width: '90%',
+  backgroundColor: '#d9d9d9',
+  height: '20%',
+  paddingBottom: 17,
+  paddingLeft: 8,
+  borderBottomLeftRadius: 5,
+  borderBottomRightRadius: 5,
+},
+preco:{
+  fontSize: 14,
+  color:'#191c2f',
+  fontWeight: 'bold',
+  marginBottom: 21,
+},
+cart:{
+  display:'flex',
+  alignSelf:'flex-end',
+  width: '30%',
+  height: '5%',
+  flexDirection: 'column',
+  alignItems:'center',
+  justifyContent:'center',
+},
+tagcontainer:{
+  flexDirection: 'row',
+  width: '100%',
+},
+tags:{
+  backgroundColor:'#191c2f',
+  margin: 5,
+  padding: 2,
+  color:'white',
+  fontSize: 14,
+  width: '20%',
+  textAlign:'center',
+},
 })

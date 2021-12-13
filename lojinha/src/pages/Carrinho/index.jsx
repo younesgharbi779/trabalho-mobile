@@ -33,7 +33,11 @@ export default function Carrinho() {
           return( <CardCarrinho  key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome} total={total + pedido.produto.vlUnitario}/>)
         })}
       </ScrollView>
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 9bd73689ef13528f320c699e8cdb123dcf926bf8
       <View style={styles.container}>
 
         <Text style={styles.total}>Total</Text>
