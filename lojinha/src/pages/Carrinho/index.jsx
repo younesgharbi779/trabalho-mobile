@@ -1,33 +1,51 @@
 import "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { styles } from "./styles";
 import Header from "../../components/Header";
 import Carrossel from "../../components/Carrossel";
 import Card from "../../components/Card";
 import axios from "axios";
+import CardCarrinho from "../../components/CardCarrinho";
 
+export default function Carrinho() {
 
-export default function Carrinho(){
-    const[pedido, setPedido] = useState(JSON)
+  const [pedidos, setPedidos] = useState([])
 
-    const handleClick = async () => {
+  const handleClick = async () => {
 
-        await axios({
-          method: "GET",
-          url:"https://api-da-lojinha.herokuapp.com/itemPedido",
-    
-        }).then(response =>{
-          setPedido(response.data)
-        })
-      };
-      useEffect(()=>{handleClick()},[])
-      const total = total + pedido.subTotal
-  
+    await axios ({
+      method: "GET",
+      url:"https://api-da-lojinha.herokuapp.com/itemPedido",
 
-    return(
-        <View>
-            <Text>{pedido.subTotal}</Text>
-        </View>
-    )
-}
+    }).then(response => {
+      setPedidos(response.data)
+    })
+  };
+
+  useEffect(()=>{handleClick()},[])
+
+  const total = 0
+
+  return (
+
+    <View style={styles.mainContainer}>
+
+      <ScrollView>
+        {pedidos.map((pedido, i)=>{
+          return( <CardCarrinho  key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome} total={total + pedido.produto.vlUnitario}/>)
+        })}
+      </ScrollView>
+      <View style={styles.container}>
+
+        <Text style={styles.total}>Total</Text>
+        <Text style={styles.price}>R$ {total}</Text>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Comprar</Text>
+        </TouchableOpacity>
+
+      </View>
+    </View>
+  )
+};

@@ -7,12 +7,13 @@ import DetalheProdutos from "./src/pages/DetalheProdutos/index"
 import Login from "./src/pages/Login";
 import Carrinho from "./src/pages/Carrinho"
 
+import { StatusBar } from "react-native";
 
 export default function App() {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer >
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Login" component={Login} options={{headerShown: false}}  />
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
         <Stack.Screen name="DetalheProdutos" component={DetalheProdutos} options={{headerShown: false}}/>
@@ -21,5 +22,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-

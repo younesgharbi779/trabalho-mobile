@@ -21,17 +21,17 @@ export default function Home({ navigation }) {
       setProduto(response.data)
     })
   };
-    useEffect(()=>{handleClick()},[])
+  useEffect(() => { handleClick() }, [])
 
-    
+
   return (
     <ScrollView style={styles.containerHome}>
-      <Header />
+    <Header carrinho={()=> navigation.navigate("Carrinho")} />
       <Carrossel />
       <Categorias />
       <View style={styles.container}>
       {produto?.map((produto)=>{
-        return( <Card style={styles.container} key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("Produtos",{itemId:produto.id})}}/>)
+        return( <Card style={styles.container} key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("DetalheProdutos",{itemId:produto.id})}}/>)
       })}
       </View>
     </ScrollView>
