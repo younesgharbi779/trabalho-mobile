@@ -6,18 +6,19 @@ export const createTable = async () => {
 
 export const verifyUser = async (usuario, senha, setListaUsuarios, listaUsuarios, navigation) => {
     const novoUsuario = new Usuario({
-      usuario: usuario,
-      senha: senha,
-  });
+        usuario: usuario,
+        senha: senha,
+    });
 
     for (let i = 0; i < listaUsuarios.length; i++) {
         if (novoUsuario.usuario == listaUsuarios[i].usuario && novoUsuario.senha == listaUsuarios[i].senha) {
             return (
                 () => navigation.navigate("Home")
             );
-        }else{
-            await novoUsuario.save();
-            setListaUsuarios(getAllUsers());
+        } else {
+            return (
+                novoUsuario.save()),
+                await setListaUsuarios(getAllUsers());
         };
     };
 };

@@ -5,7 +5,6 @@ import { styles } from "./styles";
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { createTable, verifyUser, getAllUsers } from '../../repository/usuarioRepository';
-import Usuario from "../../model/Usuario";
 
 export default function Login() {
 
@@ -22,7 +21,9 @@ export default function Login() {
     if (!usuario === null || !senha === null) return;
 
     verifyUser(usuario, senha, setListaUsuarios, listaUsuarios);
-    console.log(listaUsuarios)
+    console.log(listaUsuarios);
+    setUsuario(null);
+    setSenha(null);
   }
 
   return (
