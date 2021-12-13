@@ -2,11 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container:{
-        width:'40%',
-        height:200,
-        marginTop:50,
-        marginBottom: 30,
-        backgroundColor: '#191c2f',
+        width:'100%',
+        height:120,
+        marginTop:15,
+        marginBottom: 5,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -15,36 +14,48 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.58,
         shadowRadius: 16.00,
         elevation: 24,
+        flexDirection:'row',
+        backgroundColor: '#d9d9d9',
+        borderRadius: 70,
     },
     containerImg:{
-        width: '100%',
+        width: '36%',
         height: '100%',
     },
     img:{
         width:"100%",
         height:"100%",
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
+        borderRadius: 80,
     },
-    textcontainer:{
-        backgroundColor: '#232743',
-        width: '100%',
-        height: '23%',
+    card:{
+        width: '60%',
+        flexDirection: 'row',
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
-        flexDirection:'row',
+    },
+    textcontainer:{
+        width: '50%',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        flexDirection:'column',
     },
     text:{
-        width: '38%',
         flexWrap:'wrap',
-        fontSize:13,
-        color: 'white',
+        fontSize:22,
+        color: '#191c2f',
         fontWeight: 'bold',
-        marginLeft: 8,
-        marginRight: 8,
         flexWrap: 'wrap',
+        display: 'flex',
+        alignItems:'center',
+        justifyContent:'center',
         textAlign:'center',
-        
     },
+    cartcontainer:{
+        width: '10%',
+        marginLeft: 20,
+        justifyContent:'center',
+        alignItems:'center',
+    }
 })

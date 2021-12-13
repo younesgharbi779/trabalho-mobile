@@ -27,8 +27,8 @@ export default function Home({ navigation }) {
   return (
     <ScrollView style={styles.containerHome}>
       <Header />
-      <Categorias />
       <Carrossel />
+      <Categorias />
       <View style={styles.container}>
       {produto?.map((produto)=>{
         return( <Card style={styles.container} key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("Produtos",{itemId:produto.id})}}/>)
