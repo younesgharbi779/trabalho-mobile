@@ -10,7 +10,6 @@ export default function CardCarrinho(props) {
 
     return (
         <>
-
             <View style={styles.mainContainer}>
 
                 <View style={styles.infoContainer}>
@@ -22,7 +21,7 @@ export default function CardCarrinho(props) {
                     <View style={styles.iconsContainer}>
 
                         <TouchableOpacity>
-                        <AntDesign name="minussquareo" size={24} color="#fff" />
+                            <AntDesign name="minussquareo" size={24} color="#fff" />
                         </TouchableOpacity>
                         
                         <Text style={styles.quantity}>1</Text>
@@ -42,7 +41,7 @@ export default function CardCarrinho(props) {
                 <View style={styles.imageContainer}>
                     <Image
                         source={{
-                            uri: ` ${foto}`,
+                            uri: foto,
                         }}
                         style={styles.image}
                     />
