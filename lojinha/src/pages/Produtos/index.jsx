@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import {View, Text } from "react-native";
 import Header from "../../components/Header";
 import { styles } from "./styles";
+<<<<<<< HEAD
 import CardDetalhe from "../../components/CardDetalhe";
+=======
+import Card from "../../components/CardDetalhe";
+>>>>>>> f6ea422227a85098e05347383772e10e95ec9695
 import axios from "axios"
 
 export default function Produtos({navigation, route}){
