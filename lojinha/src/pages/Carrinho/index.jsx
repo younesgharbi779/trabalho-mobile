@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import axios from "axios";
 import CardCarrinho from "../../components/CardCarrinho";
 
 
+=======
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import axios from "axios";
+import CardCarrinho from "../../components/CardCarrinho";
+
+import { styles } from './styles'
+>>>>>>> afc4997a77010c73724111081d644464cd512bdf
 
 export default function Carrinho() {
   
@@ -25,6 +33,7 @@ export default function Carrinho() {
   const total = 0
   
   return (
+<<<<<<< HEAD
     <View>
       {pedidos.map((pedido, i)=>{
         return( <CardCarrinho  key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome} total={total + pedido.produto.vlUnitario}/>)
@@ -51,6 +60,26 @@ export default function Carrinho() {
         >
           <Text style={{ color: "#fff", fontWeight: "bold" }}>Comprar</Text>
         </TouchableOpacity>
+=======
+
+    <View style={styles.mainContainer}>
+
+      <ScrollView>
+        {pedidos.map((pedido, i)=>{
+          return( <CardCarrinho  key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome} total={total + pedido.produto.vlUnitario}/>)
+        })}
+      </ScrollView>
+
+      <View style={styles.container}>
+
+        <Text style={styles.total}>Total</Text>
+        <Text style={styles.price}>R$ {total}</Text>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Comprar</Text>
+        </TouchableOpacity>
+        
+>>>>>>> afc4997a77010c73724111081d644464cd512bdf
       </View>
     </View>
   )
