@@ -1,34 +1,74 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    container:{
-        width: '100%',
-        height: '100%',
-        alignItems: 'center',
-        alignContent:'center'
+
+    mainContainer: {
+     flex: 1
     },
-    img:{
-        width: '100%',
-        height: 200,
+ 
+    imageContainer: {
+     flex: 2
     },
-    containerPrice:{
-        alignSelf:"flex-start",
-        backgroundColor:"#1E2024",
-        opacity:5,
-        height:200,
-        width:"100%",
+ 
+    image: {
+     height: 500,
+     width: '100%'
     },
-    containerDescricao:{
-        alignItems:"center",
-        alignContent:"center",
-        height:160,
+ 
+    priceContainer: {
+     alignItems: 'flex-end'
     },
-    descricao:{
-        color:"white",
-        fontSize:25,
+ 
+    price: {
+     color: '#fff',
+     fontSize: 48,
+     position: 'relative',
+     bottom: 70,
+     backgroundColor: '#e03b22',
+     borderTopLeftRadius: 5,
+     borderBottomLeftRadius: 5,
+     paddingHorizontal: 5
     },
-    preco:{
-        color:"white",
-        fontSize:50,
+ 
+    descriptionMainContainer: {
+     flex: 1,
+     flexDirection: 'row',
+     backgroundColor: '#202430',
+     alignItems: 'center',
+     borderRadius: 5,
+     marginHorizontal: 20
+    },
+ 
+    descriptionContainer: {
+     width: '50%',
+     alignItems: 'center',
+     justifyContent: 'center',
+     height: 150
+    },
+ 
+    gameDescription: {
+     color: '#e03b22',
+     fontSize: 20,
+     marginBottom: 10, 
+     fontWeight: 'bold'
+    },
+ 
+    description: {
+     color:'#fff',
+     textAlign: 'center',
+     paddingHorizontal: 5
+    },
+ 
+    line: {
+     width: 3,
+     height: 120,
+     backgroundColor: '#191c2f',
+     borderRadius: 5
+    },
+ 
+    buttonContainer: {
+     flex: 1,
+     alignItems: 'center',
+     justifyContent: 'center'
     }
 })

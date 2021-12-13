@@ -4,72 +4,61 @@ export const styles = StyleSheet.create({
 
 
     mainContainer: {
-        flex: 1
+        flexDirection: "row",
+        height: 200,
+        backgroundColor: "#202430",
+        marginHorizontal: 10,
+        borderRadius: 5,
+        height: 200,
+        marginVertical: 10,
+        alignItems: 'center'
     },
 
-    imageContainer: {
-        flex: 2
+    infoContainer: {
+        width: "50%"
     },
 
-    image: {
-        height: 500,
-        width: '100%'
-    },
-
-    priceContainer: {
-        alignItems: 'flex-end'
+    gameName: {
+        color: "#fff",
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 24
     },
 
     price: {
-        color: '#fff',
-        fontSize: 48,
+        color: "#e03b22",
+        fontSize: 24,
+        textAlign: "center",
+        fontWeight: "bold",
+        marginVertical: 10
+    },
+
+    iconsContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around",
+        paddingHorizontal: 50
+    },
+    
+    quantity: {
+        marginHorizontal: 8,
+        color: "#fff",
+        fontWeight: "bold",
+        marginTop: 3,
+    },
+
+    removeButton: {
         position: 'relative',
-        bottom: 70,
-        backgroundColor: '#e03b22',
-        borderTopLeftRadius: 5,
-        borderBottomLeftRadius: 5,
-        paddingHorizontal: 5
+        top: 40
     },
 
-    descriptionMainContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        backgroundColor: '#202430',
-        alignItems: 'center',
-        borderRadius: 5,
-        marginHorizontal: 20
+    imageContainer: {
+        width: "50%"
     },
 
-    descriptionContainer: {
-        width: '50%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 150
-    },
-
-    gameDescription: {
-        color: '#e03b22',
-        fontSize: 20,
-        marginBottom: 10,
-        fontWeight: 'bold'
-    },
-
-    description: {
-        color: '#fff',
-        textAlign: 'center',
-        paddingHorizontal: 5
-    },
-
-    line: {
-        width: 3,
-        height: 120,
-        backgroundColor: '#191c2f',
-        borderRadius: 5
-    },
-
-    buttonContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+    image: {
+        height: 200,
+        width: '100%',
+        borderRadius: 2
     }
 })

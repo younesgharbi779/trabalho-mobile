@@ -3,9 +3,10 @@ import { View, Image, Text, TouchableOpacity } from "react-native";
 
 import BotaoAdicionar from "../BotaoAdicionar";
 import { AntDesign } from '@expo/vector-icons';
+
 import { styles } from './styles';
 
-export default function CardDetalhe(props) {
+export default function CardDetalhe( props ) {
 
   const { img, descricao, preco, funcao } = props
 
@@ -18,7 +19,7 @@ export default function CardDetalhe(props) {
           style={{ height: '100%', width: '100%' }}
 
           source={{
-            uri: img,
+            uri:img,
           }}
         />
 

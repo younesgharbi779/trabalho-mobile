@@ -11,9 +11,21 @@ import CardCarrinho from "../../components/CardCarrinho";
 import { styles } from './styles'
 
 export default function Carrinho() {
+
   const [pedidos, setPedidos] = useState([])
 
-  useEffect(() => { handleClick() }, [])
+  const handleClick = async () => {
+
+    await axios ({
+      method: "GET",
+      url:"https://api-da-lojinha.herokuapp.com/itemPedido",
+
+    }).then(response => {
+      setPedidos(response.data)
+    })
+  };
+
+  useEffect(()=>{handleClick()},[])
 
   const total = 0
 
@@ -22,8 +34,8 @@ export default function Carrinho() {
     <View style={styles.mainContainer}>
 
       <ScrollView>
-        {pedidos.map((pedido, i) => {
-          return (<CardCarrinho key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome} total={total + pedido.produto.vlUnitario} />)
+        {pedidos.map((pedido, i)=>{
+          return( <CardCarrinho  key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome} total={total + pedido.produto.vlUnitario}/>)
         })}
       </ScrollView>
       <View style={styles.container}>
