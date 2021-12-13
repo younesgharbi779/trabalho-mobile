@@ -20,7 +20,7 @@ export default function CardCarrinho(props) {
 
                     <View style={styles.iconsContainer}>
 
-                        <TouchableOpacity disabled={contador==0 ? true : false} onPress={()=>setContador(contador -1)}>
+                        <TouchableOpacity disabled={contador==1? true : false} onPress={()=>setContador(contador -1)}>
                             <AntDesign name="minussquareo" size={24} color="#fff" />
                         </TouchableOpacity>
                         
