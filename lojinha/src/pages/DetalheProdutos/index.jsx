@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import axios from "axios";
 
 import Header from "../../components/Header";
 import CardDetalhe from "../../components/CardDetalhe";
+
 import { styles } from "./styles";
 
 export default function DetalheProdutos({ navigation, route }) {
@@ -47,13 +48,15 @@ export default function DetalheProdutos({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <Header home={() => navigation.goBack("Home")} carrinho={()=> navigation.navigate("Carrinho")} />
+      <Header home={() => navigation.goBack("Home")} />
+      <ScrollView>
       <CardDetalhe
         img={jogo.imagens}
         descricao={jogo.descricao}
         preco={jogo.vlUnitario}
         funcao={adicionar}
       />
+      </ScrollView>
     </View>
   );
 }
