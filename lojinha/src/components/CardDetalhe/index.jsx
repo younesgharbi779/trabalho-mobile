@@ -1,29 +1,29 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, TouchableOpacity } from "react-native";
 
 import BotaoAdicionar from "../BotaoAdicionar";
 import { AntDesign } from '@expo/vector-icons';
+
+import { styles } from './styles';
 
 export default function CardDetalhe( props ) {
 
   const { img, descricao, preco, funcao } = props
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.mainContainer}>
 
-      <View style={{flex: 4}}>
+      <View styles={styles.imageContainer}>
         <Image
-          style={{height: '100%', width: '100%'}}
-          
+          style={styles.image}
           source={{
             uri:img,
           }}
         />
 
-        <View style={{alignItems: 'flex-end'}}>
+        <View style={styles.priceContainer}>
 
-          <Text style={{ color: '#fff', fontSize: 48, position: 'relative',
-           bottom: 70, backgroundColor: '#e03b22', borderTopLeftRadius: 5, borderBottomLeftRadius: 5, paddingHorizontal: 5}}>
+          <Text style={styles.price}>
             R$ {preco}
           </Text>
 
@@ -31,24 +31,27 @@ export default function CardDetalhe( props ) {
         
       </View>
       
-      <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#202430', alignItems: 'center', borderRadius: 5,
-        marginHorizontal: 20, marginTop: 20}}>
+      <View style={styles.descriptionMainContainer}>
 
-        <View style={{width: '50%', alignItems: 'center', justifyContent: 'center', height: 150}}>
-          <Text style={{color: '#e03b22', fontSize: 20, marginBottom: 10, fontWeight: 'bold'}}>Descrição do jogo</Text>
-          <Text style={{color:'#fff', textAlign: 'center', paddingHorizontal: 5 }}>{descricao}</Text>
+        <View style={styles.descriptionContainer}>
+          <Text style={styles.gameDescription}>Descrição do jogo</Text>
+          <Text style={styles.description}>{descricao}</Text>
         </View>
 
-        <View style={{width: 3, height: 120, backgroundColor: '#191c2f', borderRadius: 5}}></View>
+        <View style={styles.line} />
 
-        <View style={{width: '50%', alignItems: 'center', justifyContent: 'center', height: 150}}>
-          <AntDesign name="hearto" size={30} color="white" />
+        <View style={styles.descriptionContainer}>
+
+          <TouchableOpacity>
+            <AntDesign name="hearto" size={30} color="white" />
+          </TouchableOpacity>
+  
         </View>
 
       </View>
 
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <BotaoAdicionar callBack={funcao}  />
+      <View style={styles.buttonContainer}>
+        <BotaoAdicionar callBack={funcao} />
       </View>
 
     </View>
