@@ -8,8 +8,6 @@ import Card from "../../components/Card";
 import axios from "axios";
 import CardCarrinho from "../../components/CardCarrinho";
 
-import { styles } from './styles'
-
 export default function Carrinho() {
 
   const [pedidos, setPedidos] = useState([])

@@ -16,8 +16,6 @@ export default function CardDetalhe( props ) {
       <View styles={styles.imageContainer}>
         <Image
           style={styles.image}
-          style={{ height: '100%', width: '100%' }}
-
           source={{
             uri:img,
           }}
