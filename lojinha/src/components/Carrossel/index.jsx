@@ -1,39 +1,62 @@
 import React, { useState } from "react";
 import { View, TextInput, Text, SafeAreaView, Image } from "react-native";
 import { styles } from "./styles";
+import Botao from "../Botao";
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 const slides = [
     {
-        key: '1',
-        title: 'Hotline Miami',
-        text: 'jogo de ação',
-        image: require('../../assets/1.png')
+        key: '0',
+        title: 'Valorant',
+        image: require('../../assets/valorant.webp'),
+        price: 'GRÁTIS',
+        tag1: 'Ação',
+        tag2: 'FPS',
 
     },
     {
         key: '1',
-        title: 'Steins Gate',
-        text: 'jogo de ação',
-        image: require('../../assets/2.jpg')
-
+        title: 'Metro Redux',
+        image: require('../../assets/metro.jpg'),
+        price: 'R$89,90',
+        tag1: 'Terror',
+        tag2: 'FPS',
     },
     {
-        key: '1',
-        title: 'Dont Starve Together',
-        text: 'jogo de ação',
-        image: require('../../assets/3.jpg')
-
+        key: '2',
+        title: 'Dead Space',
+        image: require('../../assets/deadspace.png'),
+        price: 'R$69,90',
+        tag1: 'Ação',
+        tag2: 'Terror',
     },
     {
-        key: '1',
-        title: 'Audiosurf 2',
-        text: 'jogo de ação',
-        image: require('../../assets/4.jpg')
+        key: '3',
+        title: 'Bioshock',
+        image: require('../../assets/bioshock.jpg'),
+        price: 'R$119,90',
+        tag1: 'Fantasia',
+        tag2: 'Mistério',
+    },
+    {
+        key: '4',
+        title: 'The Last of Us',
+        image: require('../../assets/last.png'),
+        price: 'R$99,90',
+        tag1: 'Mistério',
+        tag2: 'FPS',
+    },
+    {
+        key: '4',
+        title: 'The Walking Dead',
+        image: require('../../assets/walkingdead.webp'),
+        price: 'R$49,90',
+        tag1: 'Terror',
+        tag2: 'HQ',
 
     },
 ];
-export default function Carrossel(){
+export default function Carrossel(props){
     const [showHome, setShowHome] = useState(false);
 
     function renderSlides({ item }){
@@ -44,16 +67,23 @@ export default function Carrossel(){
                     source={item.image} 
                     style={styles.img}
                      />
-                    <Text style={styles.text}>
-                        {item.title}
-                    </Text>
+                </View>
+                <View  style={styles.detalhes}>
+                    <Text style={styles.text}>{item.title}</Text>
+                        <View style={styles.cart}>
+                            <Text style={styles.preco}>{item.price}</Text>
+                            <Botao callBack={props.carrinho} label="https://cdn-icons-png.flaticon.com/512/711/711192.png"/>
+                        </View>
+                    <View style={styles.tagcontainer}>
+                        <Text style={styles.tags}>{item.tag1}</Text>
+                        <Text style={styles.tags}>{item.tag2}</Text>
+                    </View>
                 </View>
             </View>
         )
     }
 
     if (showHome){
-        return <Text>Entrou</Text>
     }else{
         return (
             <AppIntroSlider

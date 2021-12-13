@@ -10,7 +10,7 @@ const categorias = [
     },
     {
         key: '2',
-        title: 'Precinhos',
+        title: 'Promoção',
     },
     {
         key: '3',
@@ -60,9 +60,7 @@ export default function Categorias (){
         key: '1',
         title: ''
     },
-    );
-
-    
+    );   
     const renderItemLista=({item}) => {
         const ativo = (item.key == activeItem.key)  ? styles.active : {};
         return (

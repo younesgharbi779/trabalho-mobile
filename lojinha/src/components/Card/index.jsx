@@ -16,9 +16,15 @@ export default function Card(props) {
           }}
           />
       </View>
+
+        <View style={styles.card}>
         <View style={styles.textcontainer}>
-          <Text style={styles.text}>{titulo}</Text>
-           <BotaoInterativo label = {price} callBack={detalhe}/> 
+            <Text style={styles.text}>{titulo}</Text>
+            <BotaoInterativo label = {price} callBack={detalhe}/>
+        </View>
+          <View style={styles.cartcontainer}>
+           <Botao callBack={props.carrinho} label="https://cdn-icons-png.flaticon.com/512/711/711192.png"/>
+          </View>
       </View>
     </View>
   );

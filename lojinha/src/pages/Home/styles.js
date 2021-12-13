@@ -3,10 +3,9 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex:1,
-        marginTop:15,
         marginBottom: 90,
         flexWrap:"wrap",
-        flexDirection:"row",
+        flexDirection:"column",
         justifyContent: "space-evenly",
     },
     containerHome:{
