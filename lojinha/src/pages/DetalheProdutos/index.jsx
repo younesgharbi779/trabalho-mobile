@@ -13,13 +13,18 @@ export default function DetalheProdutos({ navigation, route }) {
   const handleClick = async () => {
     await axios({
       method: "GET",
+<<<<<<< HEAD
       url: `https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(
         itemId
       )}`,
+=======
+      url: `https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(itemId)}`,
+>>>>>>> 4eec24ee19428deacb5dd49663a584ab5b105aec
     }).then((response) => {
       setProduto(response.data);
     });
   };
+<<<<<<< HEAD
 
   useEffect(() => {
     handleClick();
@@ -30,6 +35,18 @@ export default function DetalheProdutos({ navigation, route }) {
     axios
       .post("https://api-da-lojinha.herokuapp.com/itemPedido", {
         
+=======
+
+  useEffect(() => {
+    handleClick();
+  }, []);
+  const jogo = produto;
+
+  const adicionar = () => {
+    axios
+      .post("https://api-da-lojinha.herokuapp.com/itemPedido", {
+
+>>>>>>> 4eec24ee19428deacb5dd49663a584ab5b105aec
         quantidade: "1",
         pedido: {
           id: 3,
@@ -37,10 +54,17 @@ export default function DetalheProdutos({ navigation, route }) {
         produto: {
           id: jogo.id,
         },
+<<<<<<< HEAD
       
       })
       .then(function (response) {
         console.log(response);
+=======
+
+      })
+      .then(function (response) {
+        console.log(response, "adicionado");
+>>>>>>> 4eec24ee19428deacb5dd49663a584ab5b105aec
       })
       .catch(function (error) {
         console.log(error);
@@ -58,4 +82,8 @@ export default function DetalheProdutos({ navigation, route }) {
       />
     </View>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4eec24ee19428deacb5dd49663a584ab5b105aec
