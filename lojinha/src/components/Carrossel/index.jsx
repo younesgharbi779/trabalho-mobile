@@ -47,7 +47,7 @@ const slides = [
         tag2: 'FPS',
     },
     {
-        key: '4',
+        key: '5',
         title: 'The Walking Dead',
         image: require('../../assets/walkingdead.webp'),
         price: 'R$49,90',

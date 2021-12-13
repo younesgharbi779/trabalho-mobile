@@ -10,6 +10,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-native-fontawesome": "^0.2.7",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
@@ -17,9 +20,12 @@
     "app": "^0.1.0",
     "axios": "^0.24.0",
     "expo": "~43.0.2",
+<<<<<<< HEAD
     "expo-linear-gradient": "^10.0.3",
     "expo-sqlite": "~10.0.3",
     "expo-sqlite-orm": "^1.5.6",
+=======
+>>>>>>> 36d2feaaf508a863b398c6416c7e06d718659b72
     "expo-status-bar": "~1.1.0",
     "intro": "^1.0.0",
     "react": "17.0.1",
@@ -31,13 +37,13 @@
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
+    "react-native-svg": "^12.1.1",
     "react-native-web": "0.17.1",
     "slider": "^1.0.4",
     "yet": "^0.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@types/react": "^17.0.37"
+    "@babel/core": "^7.12.9"
   },
   "private": true
 }

@@ -1,15 +1,6 @@
-// import { StyleSheet } from 'react-native';
-
-// export const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//     },
-// })
-
 import { StyleSheet } from 'react-native';
 
+<<<<<<< HEAD
 export const styles = StyleSheet.create({ 
 
   container: { 
@@ -90,3 +81,12 @@ export const styles = StyleSheet.create({
     marginLeft: 100
   }
 });
+=======
+export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+})
+>>>>>>> 36d2feaaf508a863b398c6416c7e06d718659b72
