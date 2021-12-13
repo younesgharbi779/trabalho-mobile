@@ -4,7 +4,7 @@ import { View, Text, Keyboard, ImageBackground } from "react-native";
 import { styles } from "./styles";
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
-import { createTable, verifyUser, getAllUsers } from '../../repository/usuarioRepository';
+import { createTable, signUp, getAllUsers } from '../../repository/usuarioRepository';
 
 export default function Login() {
 
@@ -17,11 +17,11 @@ export default function Login() {
     setListaUsuarios(await getAllUsers());
   }, []);
 
-  const handleClick = async () => {
+  const handleSingUp = async () => {
     if (!usuario === null || !senha === null) return;
 
-    verifyUser(usuario, senha, setListaUsuarios, listaUsuarios);
-    console.log(listaUsuarios);
+    signUp(usuario, senha, setListaUsuarios, listaUsuarios);
+    console.log(listaUsuarios)
     setUsuario(null);
     setSenha(null);
   }
@@ -61,7 +61,7 @@ export default function Login() {
                 Forgot Password?
               </Text>
             </TouchableOpacity>
-            <TouchableHighlight onPress={handleClick} style={styles.loginButton}>
+            <TouchableHighlight onPress={handleSingUp} style={styles.loginButton}>
               <Text style={styles.loginButtonText}>
                 Login
               </Text>

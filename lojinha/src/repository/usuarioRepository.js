@@ -4,7 +4,8 @@ export const createTable = async () => {
     await Usuario.createTable();
 };
 
-export const verifyUser = async (usuario, senha, setListaUsuarios, listaUsuarios, navigation) => {
+export const signUp = async (usuario, senha, setListaUsuarios, listaUsuarios) => {
+    let sign = false;
     const novoUsuario = new Usuario({
         usuario: usuario,
         senha: senha,
@@ -12,15 +13,22 @@ export const verifyUser = async (usuario, senha, setListaUsuarios, listaUsuarios
 
     for (let i = 0; i < listaUsuarios.length; i++) {
         if (novoUsuario.usuario == listaUsuarios[i].usuario && novoUsuario.senha == listaUsuarios[i].senha) {
-            return (
-                () => navigation.navigate("Home")
-            );
+            sign = true
+            break
         } else {
-            return (
-                novoUsuario.save()),
-                await setListaUsuarios(getAllUsers());
+            sign = false
         };
     };
+
+    if (sign == false) {
+        return (
+            console.log('usuario cadastrado'),
+            novoUsuario.save(),
+            setListaUsuarios(getAllUsers()))
+    } else {
+        return (
+            console.log('usuario ja cadastrado'));
+    }
 };
 
 export const getAllUsers = async () => {
