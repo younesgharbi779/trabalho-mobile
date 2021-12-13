@@ -1,9 +1,10 @@
 import "react-native-gesture-handler";
 import React,{useEffect, useState} from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { styles } from "./styles";
 import Header from "../../components/Header";
 import Carrossel from "../../components/Carrossel";
+import Categorias from "../../components/Categorias";
 import Card from "../../components/Card";
 import axios from "axios";
 
@@ -14,7 +15,7 @@ export default function Home({ navigation }) {
 
     await axios({
       method: "GET",
-      url:"http://localhost:8080/produtos",
+      url:"https://api-da-lojinha.herokuapp.com/produtos",
 
     }).then(response =>{
       setProduto(response.data),
@@ -25,12 +26,15 @@ export default function Home({ navigation }) {
   };
     useEffect(()=>{handleClick()},[])
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.containerHome}>
       <Header />
+      <Categorias />
       <Carrossel />
+      <View style={styles.container}>
       {produto?.map((produto)=>{
-       return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("Produtos",{itemId:produto.id})}}/>)
+        return( <Card style={styles.container} key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("Produtos",{itemId:produto.id})}}/>)
       })}
-    </View>
+      </View>
+    </ScrollView>
   );
 }

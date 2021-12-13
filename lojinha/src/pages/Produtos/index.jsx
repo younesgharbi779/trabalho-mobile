@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import {View, Text } from "react-native";
 import Header from "../../components/Header";
 import { styles } from "./styles";
-import CardDetalhe from "../../components/CardDetalhe";
+import Card from "../../components/CardDetalhe";
 import axios from "axios"
 
 export default function Produtos({navigation, route}){
@@ -14,7 +14,7 @@ export default function Produtos({navigation, route}){
   
       await axios({
         method: "GET",
-        url:`http://localhost:8080/produtos/${JSON.stringify(itemId)}`,
+        url:`https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(itemId)}`,
   
       }).then(response =>{
         setProduto(response.data),
