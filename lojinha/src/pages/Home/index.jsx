@@ -25,12 +25,9 @@ export default function Home({ navigation }) {
     
   return (
     <ScrollView style={styles.containerHome}>
-<<<<<<< HEAD
       <Header carrinho={()=>navigation.navigate("Carrinho")} />
       <Categorias />
-=======
       <Header />
->>>>>>> e9279569f5f4b989eca83dc5dc4ed3586ea67f6c
       <Carrossel />
       <Categorias />
       <View style={styles.container}>
