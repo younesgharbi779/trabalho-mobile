@@ -16,11 +16,12 @@ export const styles = StyleSheet.create({
         fontSize:20
     },
     container:{
-        width:"100%" ,
-        borderWidth:1,
-        borderColor:"black",
-        backgroundColor:"#FF7709",
-       height:40,
-       alignItems:"center",
+        width: 100,
+        backgroundColor:'#e03b22',
+        color: '#fff',
+        height: 25,
+        borderRadius: 5,
+        alignItems:'center',
+        justifyContent: 'center'
     }
 })

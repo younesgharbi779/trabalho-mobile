@@ -18,13 +18,12 @@ export default function Home({ navigation }) {
       url:"https://api-da-lojinha.herokuapp.com/produtos",
 
     }).then(response =>{
-      setProduto(response.data),
-      console.log(response.data);
+      setProduto(response.data)
     })
-      
-    console.log("terminei a funcao")
   };
     useEffect(()=>{handleClick()},[])
+
+    
   return (
     <ScrollView style={styles.containerHome}>
       <Header />
