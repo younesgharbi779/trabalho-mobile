@@ -6,13 +6,8 @@ import axios from "axios";
 import CardCarrinho from "../../components/CardCarrinho";
 import Header from "../../components/Header";
 
-<<<<<<< HEAD
 export default function Carrinho({navigation}) {
-  
-=======
-export default function Carrinho() {
 
->>>>>>> 69396173ef7e469f5d03cef4a8387f649ea237c7
   const [pedidos, setPedidos] = useState([])
   const[total, setTotal] = useState(0)
 
@@ -47,7 +42,7 @@ export default function Carrinho() {
   return (
 
     <View style={styles.mainContainer}>
-      <Header home={()=>navigation.goBack("Home")} />
+      <Header home={()=>navigation.navigate("Home")} />
       <ScrollView>
         {pedidos.map((pedido, i)=>{
           return( <CardCarrinho  key={i} foto={pedido.produto.imagens} preco={pedido.produto.vlUnitario} nome={pedido.produto.nome}/>)
