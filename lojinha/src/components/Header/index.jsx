@@ -7,9 +7,10 @@ export default function Header(props) {
   return (
     <View style={styles.container}>
         <StatusBar />
-        <Botao  callBack={props.home} label="https://cdn-icons-png.flaticon.com/512/60/60817.png" />
-        <Botao callBack={props.produtos} label="https://cdn-icons-png.flaticon.com/512/61/61125.png"/>
-        <Botao  callBack={props.carrinho} label="https://cdn-icons-png.flaticon.com/512/711/711192.png"/>
+        <Botao  callBack={props.home} label="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" />
+        <Botao callBack={props.produtos} label="https://cdn-icons-png.flaticon.com/512/687/687259.png"/>
+        <Botao  callBack={props.carrinho} label="https://cdn-icons-png.flaticon.com/512/743/743131.png"/>
+        <Botao  callBack={props.logout} label="https://cdn-icons-png.flaticon.com/512/126/126467.png"/>
     </View>
   );
 }
