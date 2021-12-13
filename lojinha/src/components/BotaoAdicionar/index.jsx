@@ -9,7 +9,7 @@ export default function BotaoAdicionar(props) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={props.callBack}>
-        <Ionicons name="cart-outline" size={26} color="white" />
+        <Ionicons name="cart-outline" size={22} color="white" />
       </TouchableOpacity>
     </View>
   );

@@ -37,7 +37,6 @@ text:{
   color: '#e03b22',
   fontWeight: 'bold',
   margin: 10,
-  paddingBottom: 15,
 },
 detalhes:{
   width: '90%',
@@ -52,7 +51,7 @@ preco:{
   fontSize: 14,
   color:'#191c2f',
   fontWeight: 'bold',
-  marginBottom: 21,
+  marginBottom: 16,
 },
 cart:{
   display:'flex',
