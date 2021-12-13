@@ -38,13 +38,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     marginBottom: 45,
     padding: 10,
-    textShadowColor: "#000",
-    textShadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    textShadowOpacity: 0.58,
-    textShadowRadius: 16.00,
-    elevation: 24,
+
   }
 })
