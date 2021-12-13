@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import axios from "axios";
@@ -29,7 +30,7 @@ export default function DetalheProdutos({ navigation, route }) {
   const adicionar = () => {
     axios
       .post("https://api-da-lojinha.herokuapp.com/itemPedido", {
-        
+
         quantidade: "1",
         pedido: {
           id: 3,
@@ -37,10 +38,7 @@ export default function DetalheProdutos({ navigation, route }) {
         produto: {
           id: jogo.id,
         },
-      
-      })
-      .then(function (response) {
-        console.log(response);
+
       })
       .catch(function (error) {
         console.log(error);

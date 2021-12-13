@@ -9,8 +9,6 @@ export const verify = async (usuario, senha, setListaUsuarios, listaUsuarios, na
         usuario: usuario,
         senha: senha,
     });
-    novoUsuario.save();
-    setListaUsuarios(getAllUsers());
 
     for (let i = 0; i < listaUsuarios.length; i++) {
         if (novoUsuario.usuario == listaUsuarios[i].usuario && novoUsuario.senha == listaUsuarios[i].senha) {
@@ -25,8 +23,14 @@ export const signUp = async (usuario, senha, setListaUsuarios, listaUsuarios) =>
         usuario: usuario,
         senha: senha,
     });
+<<<<<<< HEAD
     novoUsuario.save()
     setListaUsuarios(getAllUsers())
+=======
+    novoUsuario.save();
+    setListaUsuarios(getAllUsers());
+
+>>>>>>> 69396173ef7e469f5d03cef4a8387f649ea237c7
     for (let i = 0; i < listaUsuarios.length; i++) {
         if (novoUsuario.usuario == listaUsuarios[i].usuario && novoUsuario.senha == listaUsuarios[i].senha) {
             sign = true
