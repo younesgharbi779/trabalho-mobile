@@ -13,7 +13,7 @@ export default function App() {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer >
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="login">
       <Stack.Screen name="Login" component={Login} options={{headerShown: false}}  />
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
         <Stack.Screen name="DetalheProdutos" component={DetalheProdutos} options={{headerShown: false}}/>
