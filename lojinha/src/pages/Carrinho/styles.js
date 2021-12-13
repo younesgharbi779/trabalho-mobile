@@ -41,8 +41,4 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         textTransform: 'uppercase'
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9bd73689ef13528f320c699e8cdb123dcf926bf8
 })

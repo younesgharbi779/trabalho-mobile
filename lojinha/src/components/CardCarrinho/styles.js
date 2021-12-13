@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 
+
     mainContainer: {
         flexDirection: "row",
         height: 200,
@@ -38,7 +39,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-around",
         paddingHorizontal: 50
     },
-
+    
     quantity: {
         marginHorizontal: 8,
         color: "#fff",
@@ -54,11 +55,10 @@ export const styles = StyleSheet.create({
     imageContainer: {
         width: "50%"
     },
-    
+
     image: {
         height: 200,
         width: '100%',
         borderRadius: 2
     }
-
 })

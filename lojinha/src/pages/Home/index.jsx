@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import "react-native-gesture-handler";
 import React,{useEffect, useState} from "react";
 import { View, ScrollView } from "react-native";
-=======
-import React, { useEffect, useState } from "react";
-import { View } from "react-native";
->>>>>>> 4eec24ee19428deacb5dd49663a584ab5b105aec
 import { styles } from "./styles";
 import Header from "../../components/Header";
 import Carrossel from "../../components/Carrossel";
@@ -26,12 +21,12 @@ export default function Home({ navigation }) {
       setProduto(response.data)
     })
   };
-    useEffect(()=>{handleClick()},[])
+  useEffect(() => { handleClick() }, [])
 
-    
+
   return (
     <ScrollView style={styles.containerHome}>
-      <Header carrinho={()=> navigation.navigate("Carrinho")} />
+    <Header carrinho={()=> navigation.navigate("Carrinho")} />
       <Carrossel />
       <Categorias />
       <View style={styles.container}>

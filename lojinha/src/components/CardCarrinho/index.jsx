@@ -23,13 +23,13 @@ export default function CardCarrinho(props) {
                         <TouchableOpacity>
                             <AntDesign name="minussquareo" size={24} color="#fff" />
                         </TouchableOpacity>
-                        
+
                         <Text style={styles.quantity}>1</Text>
 
                         <TouchableOpacity>
                             <AntDesign name="plussquareo" size={24} color="#fff" />
                         </TouchableOpacity>
-                        
+
                     </View>
 
                     <TouchableOpacity style={styles.removeButton}>
@@ -50,4 +50,4 @@ export default function CardCarrinho(props) {
             </View>
         </>
     );
-}
+} 
