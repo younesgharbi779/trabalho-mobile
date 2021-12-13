@@ -3,17 +3,20 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./src/pages/Home";
-import Produtos from "./src/pages/Produtos"
+import DetalheProdutos from "./src/pages/DetalheProdutos/index"
 import Login from "./src/pages/Login";
+import Carrinho from "./src/pages/Carrinho"
+
 
 export default function App() {
   const Stack = createStackNavigator();
   return (
-    <NavigationContainer initialRouteName="Home">
-      <Stack.Navigator initialRouteName="Login">
+    <NavigationContainer >
+      <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Login" component={Login} options={{headerShown: false}}  />
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
-        <Stack.Screen name="Produtos" component={Produtos} options={{headerShown: false}}/>
+        <Stack.Screen name="DetalheProdutos" component={DetalheProdutos} options={{headerShown: false}}/>
+        <Stack.Screen name="Carrinho" component={Carrinho} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
