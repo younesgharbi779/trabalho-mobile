@@ -40,7 +40,7 @@ export default function DetalheProdutos({ navigation, route }) {
       
       })
       .then(function (response) {
-        console.log(response);
+        console.log(response, "adicionado");
       })
       .catch(function (error) {
         console.log(error);

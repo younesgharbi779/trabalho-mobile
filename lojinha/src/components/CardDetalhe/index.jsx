@@ -50,13 +50,8 @@ export default function CardDetalhe( props ) {
 
       </View>
 
-<<<<<<< HEAD
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <BotaoAdicionar callBack={funcao}  />
-=======
       <View style={styles.buttonContainer}>
-        <BotaoAdicionar />
->>>>>>> 2b0f9b380cf65667b77faeda1460ff482e2b14d3
+        <BotaoAdicionar callBack={funcao} />
       </View>
 
     </View>
