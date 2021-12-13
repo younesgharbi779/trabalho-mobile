@@ -6,11 +6,6 @@ import Home from "./src/pages/Home";
 import DetalheProdutos from "./src/pages/DetalheProdutos/index"
 import Login from "./src/pages/Login";
 import Carrinho from "./src/pages/Carrinho"
-
-
-import Carrinho from './src/pages/Carrinho/index'
-import { StatusBar } from "react-native";
-
 export default function App() {
   const Stack = createStackNavigator();
   return (
