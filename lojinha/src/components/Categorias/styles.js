@@ -3,16 +3,16 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         width:'100%',
-        height:'10%',
-        marginTop:8,
-        marginBottom: 5,
+        height:'30%',
+        marginTop:20,
+        marginBottom: 15,
         display:'flex',
         flexDirection:"column",
         justifyContent: "space-evenly",
     },
     innercontainer:{
         marginLeft: 10,
-        marginBottom: 3,
+        marginBottom: 25,
         display:'flex',
         flexDirection:'row',
     },
@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
         fontWeight:'bold',
     },
     undertext:{
+        marginTop: 2,
         marginRight: 8,
         color: 'lightgray',
         fontSize: 15,

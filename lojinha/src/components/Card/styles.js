@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container:{
         width:'100%',
         height:120,
-        marginTop:5,
+        marginTop:15,
         marginBottom: 5,
         shadowColor: "#000",
         shadowOffset: {
