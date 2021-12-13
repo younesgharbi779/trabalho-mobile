@@ -21,12 +21,12 @@ export default function Home({ navigation }) {
       setProduto(response.data)
     })
   };
-    useEffect(()=>{handleClick()},[])
+  useEffect(() => { handleClick() }, [])
 
-    
+
   return (
     <ScrollView style={styles.containerHome}>
-      <Header carrinho={()=> navigation.navigate("Carrinho")} />
+    <Header carrinho={()=> navigation.navigate("Carrinho")} />
       <Carrossel />
       <Categorias />
       <View style={styles.container}>

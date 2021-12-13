@@ -1,9 +1,9 @@
+import "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import { styles } from "./styles";
 import axios from "axios";
 import CardCarrinho from "../../components/CardCarrinho";
-
-import { styles } from './styles'
 import Header from "../../components/Header";
 
 export default function Carrinho({navigation}) {
@@ -58,8 +58,8 @@ export default function Carrinho({navigation}) {
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Comprar</Text>
         </TouchableOpacity>
-        
+
       </View>
     </View>
   )
-}
+};

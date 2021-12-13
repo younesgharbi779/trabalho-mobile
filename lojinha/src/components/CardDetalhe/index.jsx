@@ -16,6 +16,8 @@ export default function CardDetalhe( props ) {
       <View styles={styles.imageContainer}>
         <Image
           style={styles.image}
+          style={{ height: '100%', width: '100%' }}
+
           source={{
             uri:img,
           }}
@@ -28,9 +30,9 @@ export default function CardDetalhe( props ) {
           </Text>
 
         </View>
-        
+
       </View>
-      
+
       <View style={styles.descriptionMainContainer}>
 
         <View style={styles.descriptionContainer}>
@@ -45,7 +47,7 @@ export default function CardDetalhe( props ) {
           <TouchableOpacity>
             <AntDesign name="hearto" size={30} color="white" />
           </TouchableOpacity>
-  
+
         </View>
 
       </View>
