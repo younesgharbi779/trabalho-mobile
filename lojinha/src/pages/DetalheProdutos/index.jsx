@@ -14,7 +14,9 @@ export default function DetalheProdutos({navigation, route}){
   
       await axios({
         method: "GET",
-        url:`https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(itemId)}`,
+        url: `https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(
+        itemId
+      )}`,
   
       }).then(response => {
         setProduto(response.data)
@@ -25,10 +27,36 @@ export default function DetalheProdutos({navigation, route}){
 
     const jogo = produto
 
+    const adicionar = () => {
+      axios
+        .post("https://api-da-lojinha.herokuapp.com/itemPedido", {
+          
+          quantidade: "1",
+          pedido: {
+            id: 3,
+          },
+          produto: {
+            id: jogo.id,
+          },
+        
+        })
+        .then(function (response) {
+          console.log(response, "adicionado");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+  
     return (
       <View style={styles.container}>
-        <Header home={()=> navigation.goBack("Home")}/>
-        <CardDetalhe img={jogo.imagens} descricao={jogo.descricao} preco={jogo.vlUnitario} /> 
+        <Header home={() => navigation.goBack("Home")} />
+        <CardDetalhe
+          img={jogo.imagens}
+          descricao={jogo.descricao}
+          preco={jogo.vlUnitario}
+          funcao={adicionar}
+        />
       </View>
-    )
-}
+    );
+  }

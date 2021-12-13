@@ -19,6 +19,7 @@ export default function App() {
     //     <Stack.Screen name="DetalheProdutos" component={DetalheProdutos} options={{headerShown: false}}/>
     //   </Stack.Navigator>
     // </NavigationContainer>
+
     <>
       <StatusBar />
       <Carrinho />

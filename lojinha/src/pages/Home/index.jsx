@@ -20,13 +20,17 @@ export default function Home({ navigation }) {
     })
   };
     useEffect(()=>{handleClick()},[])
+
   return (
-    <View style={styles.container}>
-      <Header />
+    <ScrollView style={styles.containerHome}>
+      <Header carrinho={()=>navigation.navigate("Carrinho")} />
+      <Categorias />
       <Carrossel />
-      {produto?.map((produto)=> {
-       return( <Card key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("DetalheProdutos",{itemId:produto.id})}}/>)
+      <View style={styles.container}>
+      {produto.map((produto, i)=>{
+        return( <Card style={styles.container} key={produto.id} uri={produto.imagens} price={produto.vlUnitario} titulo={produto.nome} detalhe={() => {navigation.navigate("DetalheProdutos",{itemId:produto.id})}}/>)
       })}
-    </View>
+      </View>
+    </ScrollView>
   );
 }

@@ -8,7 +8,7 @@ import { styles } from './styles';
 
 export default function CardDetalhe( props ) {
 
-  const { img, descricao, preco } = props
+  const { img, descricao, preco, funcao } = props
 
   return (
     <View style={styles.mainContainer}>
@@ -51,7 +51,7 @@ export default function CardDetalhe( props ) {
       </View>
 
       <View style={styles.buttonContainer}>
-        <BotaoAdicionar />
+        <BotaoAdicionar callBack={funcao} />
       </View>
 
     </View>
