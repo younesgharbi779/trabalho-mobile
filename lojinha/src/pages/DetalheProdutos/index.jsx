@@ -49,7 +49,7 @@ export default function DetalheProdutos({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <Header home={() => navigation.goBack("Home")} />
+      <Header home={() => navigation.goBack("Home")} carrinho={()=> navigation.navigate("Carrinho")} />
       <CardDetalhe
         img={jogo.imagens}
         descricao={jogo.descricao}
