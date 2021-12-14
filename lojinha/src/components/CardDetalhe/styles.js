@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     },
  
     image: {
-     height: 500,
+     height: 470,
      width: '100%'
     },
  
@@ -36,21 +36,24 @@ export const styles = StyleSheet.create({
      backgroundColor: '#202430',
      alignItems: 'center',
      borderRadius: 5,
-     marginHorizontal: 20
+     marginHorizontal: 20,
+     position: 'relative',
+     bottom: 30,
     },
  
     descriptionContainer: {
      width: '50%',
      alignItems: 'center',
      justifyContent: 'center',
-     height: 150
+     height: 160
     },
  
     gameDescription: {
      color: '#e03b22',
      fontSize: 20,
      marginBottom: 10, 
-     fontWeight: 'bold'
+     fontWeight: 'bold',
+     textAlign: 'center'
     },
  
     description: {
@@ -68,6 +71,7 @@ export const styles = StyleSheet.create({
  
     buttonContainer: {
      flex: 1,
+     height: 40,
      alignItems: 'center',
      justifyContent: 'center'
     }

@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
         height: 35,
         borderRadius: 5,
         alignItems:'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
 })
