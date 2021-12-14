@@ -59,7 +59,7 @@ cart:{
   display:'flex',
   alignSelf:'flex-end',
   width: '30%',
-  height: '5%',
+  height: '10%',
   flexDirection: 'column',
   alignItems:'center',
   justifyContent:'center',
