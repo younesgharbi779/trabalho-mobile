@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { ScrollView, View } from "react-native";
 import axios from "axios";

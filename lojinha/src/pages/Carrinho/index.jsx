@@ -1,10 +1,11 @@
-import "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
-import { styles } from "./styles";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import axios from "axios";
+
 import CardCarrinho from "../../components/CardCarrinho";
 import Header from "../../components/Header";
+
+import { styles } from "./styles";
 
 export default function Carrinho({navigation}) {
 
@@ -37,7 +38,6 @@ export default function Carrinho({navigation}) {
 
   useEffect(()=>{calculaTotal()},[])
 
-  
   return (
 
     <View style={styles.mainContainer}>
@@ -52,8 +52,11 @@ export default function Carrinho({navigation}) {
       <View style={styles.container}>
 
         <Text style={styles.total}>Total</Text>
-        <Text style={styles.price}>R$ {total.totalGeral}</Text>
-
+        <View style={{flexDirection: 'row'}}>
+          <Text style={[styles.price, {fontWeight: 'bold'}]}>R$ </Text>
+        <Text style={styles.price}>{total.totalGeral}</Text>
+        </View>
+        
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Comprar</Text>
         </TouchableOpacity>

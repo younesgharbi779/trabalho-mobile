@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 
 import BotaoAdicionar from "../BotaoAdicionar";
@@ -9,6 +9,15 @@ import { styles } from './styles';
 export default function CardDetalhe( props ) {
 
   const { img, descricao, preco, funcao } = props
+  
+  const [icon, setIcon] = useState("hearto")
+
+  function trocaCoracaozinho() {
+    
+    if(icon === "hearto") setIcon("heart")
+    else setIcon("hearto")
+
+  }
 
   return (
     <View style={styles.mainContainer}>
@@ -42,8 +51,8 @@ export default function CardDetalhe( props ) {
 
         <View style={styles.descriptionContainer}>
 
-          <TouchableOpacity>
-            <AntDesign name="hearto" size={30} color="white" />
+          <TouchableOpacity onPress={trocaCoracaozinho}>
+            <AntDesign name={icon} size={30} color="#fff"/>
           </TouchableOpacity>
 
         </View>

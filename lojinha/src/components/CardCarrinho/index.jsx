@@ -1,13 +1,16 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react"
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
 import { styles } from './styles'
+
 export default function CardCarrinho(props) {
+    
     const { nome, preco, foto, total } = props
     const [contador, setContador] = useState(1)
+
     return (
         <>
             <View style={styles.mainContainer}>
@@ -20,7 +23,7 @@ export default function CardCarrinho(props) {
 
                     <View style={styles.iconsContainer}>
 
-                        <TouchableOpacity disabled={contador==1? true : false} onPress={()=>setContador(contador -1)}>
+                        <TouchableOpacity disabled={contador == 1? true : false} onPress={()=>setContador(contador -1)}>
                             <AntDesign name="minussquareo" size={24} color="#fff" />
                         </TouchableOpacity>
                         
