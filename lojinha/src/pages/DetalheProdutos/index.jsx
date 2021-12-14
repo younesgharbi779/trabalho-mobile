@@ -47,11 +47,11 @@ export default function DetalheProdutos({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <StatusBar
+       <StatusBar
         barStyle="dark-content"
         backgroundColor="#d9d9d9"
       />
-      <Header home={() => navigation.goBack("Home")} />
+      <Header home={() => navigation.goBack("Home")} carrinho={()=> navigation.navigate("Carrinho")} />
       <ScrollView>
       <CardDetalhe
         img={jogo.imagens}
