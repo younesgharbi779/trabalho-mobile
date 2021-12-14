@@ -4,8 +4,7 @@ export const styles = StyleSheet.create({
     container: {
         width:'100%',
         height:'10%',
-        marginTop:8,
-        marginBottom: 5,
+        marginTop:12,
         display:'flex',
         flexDirection:"column",
         justifyContent: "space-evenly",

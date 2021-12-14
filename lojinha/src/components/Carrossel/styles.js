@@ -43,6 +43,7 @@ detalhes:{
   width: '90%',
   backgroundColor: '#d9d9d9',
   height: '20%',
+  paddingTop: 10,
   paddingBottom: 17,
   paddingLeft: 8,
   borderBottomLeftRadius: 5,
