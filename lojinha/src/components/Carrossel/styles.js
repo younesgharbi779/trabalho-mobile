@@ -10,9 +10,9 @@ slidercontainer:{
 container:{
   display:'flex',
   justifyContent:'center',
+  alignItems:'center',
   height: 400,
   width: '90%',
-  alignItems:'center',
   shadowColor: "#000",
   shadowOffset: {
   width: 0,
