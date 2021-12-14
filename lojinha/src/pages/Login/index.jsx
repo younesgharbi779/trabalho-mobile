@@ -37,7 +37,7 @@ export default function Login({navigation}) {
     }
   }
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (usuario, senha) => {
     if (!usuario === null || !senha === null) return;
 
     signUp(usuario, senha, setListaUsuarios, listaUsuarios);
@@ -90,7 +90,7 @@ export default function Login({navigation}) {
                 <Text style={styles.signUpText}>
                   Don't have an account?
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate("SignUp")}>
                   <Text style={[styles.signUpText, { color: '#e03b22' }]}>
                     {' Sign Up'}
                   </Text>

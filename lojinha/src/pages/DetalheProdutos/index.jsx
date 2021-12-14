@@ -15,7 +15,9 @@ export default function DetalheProdutos({ navigation, route }) {
   const handleClick = async () => {
     await axios({
       method: "GET",
-      url: `https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(itemId)}`,
+      url: `https://api-da-lojinha.herokuapp.com/produtos/${JSON.stringify(
+        itemId
+      )}`,
     }).then((response) => {
       setProduto(response.data);
     });
@@ -38,9 +40,6 @@ export default function DetalheProdutos({ navigation, route }) {
           id: jogo.id,
         },
 
-      })
-      .then(function (response) {
-        console.log(response, "adicionado");
       })
       .catch(function (error) {
         console.log(error);
