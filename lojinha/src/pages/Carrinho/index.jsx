@@ -33,7 +33,6 @@ export default function Carrinho({navigation}) {
     }).then(response => {
       setTotal(response.data)
     })
-    console.log(total)
   };
 
   useEffect(()=>{calculaTotal()},[])

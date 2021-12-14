@@ -12,7 +12,7 @@ export default function Home({ navigation }) {
   const [produto,setProduto] = useState([]);
 
   const handleClick = async () => {
-
+    
     await axios({
       method: "GET",
       url:"https://api-da-lojinha.herokuapp.com/produtos",
