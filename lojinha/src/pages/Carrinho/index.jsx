@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, StatusBar } from "react-native";
 import axios from "axios";
 
 import CardCarrinho from "../../components/CardCarrinho";
@@ -41,6 +41,10 @@ export default function Carrinho({navigation}) {
   return (
 
     <View style={styles.mainContainer}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#d9d9d9"
+      />
       <Header home={()=>navigation.navigate("Home")} />
       <ScrollView>
         {pedidos.map((pedido, i)=>{

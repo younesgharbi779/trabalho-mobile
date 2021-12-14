@@ -1,11 +1,12 @@
-import "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
-import { View,KeyboardAvoidingView,ScrollView, Text, Keyboard, ImageBackground, SafeAreaView } from "react-native";
-import { styles } from "./styles";
+import { View, Text, Keyboard, ImageBackground, SafeAreaView, StatusBar } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
+
 import { createTable, signUp, getAllUsers } from '../../repository/usuarioRepository';
 import Usuario from '../../model/Usuario';
+
+import { styles } from "./styles";
 
 export default function Login({navigation}) {
 
@@ -47,6 +48,11 @@ export default function Login({navigation}) {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <ImageBackground source={require('../../../assets/backgroundImage.jpg')} style={styles.container} >
         <LinearGradient colors={['#191c2f', 'transparent']} style={styles.main} >
           <SafeAreaView>

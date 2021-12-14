@@ -1,12 +1,13 @@
-import "react-native-gesture-handler";
 import React,{useEffect, useState} from "react";
-import { View, ScrollView } from "react-native";
-import { styles } from "./styles";
+import { View, ScrollView, StatusBar } from "react-native";
+import axios from "axios";
+
 import Header from "../../components/Header";
 import Carrossel from "../../components/Carrossel";
 import Categorias from "../../components/Categorias";
 import Card from "../../components/Card";
-import axios from "axios";
+
+import { styles } from "./styles";
 
 export default function Home({ navigation }) {
   const [produto,setProduto] = useState([]);
@@ -26,7 +27,11 @@ export default function Home({ navigation }) {
 
   return (
     <ScrollView style={styles.containerHome}>
-    <Header carrinho={()=> navigation.navigate("Carrinho")} />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#d9d9d9"
+      />
+      <Header carrinho={()=> navigation.navigate("Carrinho")} />
       <Carrossel />
       <Categorias />
       <View style={styles.container}>

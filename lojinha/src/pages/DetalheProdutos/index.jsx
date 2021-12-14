@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, StatusBar } from "react-native";
 import axios from "axios";
 
 import Header from "../../components/Header";
@@ -47,6 +47,10 @@ export default function DetalheProdutos({ navigation, route }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#d9d9d9"
+      />
       <Header home={() => navigation.goBack("Home")} />
       <ScrollView>
       <CardDetalhe
